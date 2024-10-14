@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        *{
+            font-family: 굴림;
+        }
+        .btn-cancle-01{}
+        .btn-cancle-02{}
+        .btn-cancle-03{}
+        [class |= 'btn-cancel']
+        /* title속성을 선택자 */
+        [title] {color: red;}
+        [title='write'] {text-decoration: line-through;}
+        [title *='write']{
+            background: green;
+        }
+        /* write라는 단어가 포함된 title속성 선택 (구분자 : -) */
+        [title |='write']{
+            /* 띄어쓰기 */
+            text-indent: 100px;
+        }
+        /* write라는 단어가 포함된 title속성 선택 (구분자 : 공백) */
+        [title ~='write']{
+            font-size: 3em;
+        }
+
+        a:link {color: green;}
+        a:visited {color : aqua;}
+        a:hover {color: brown;}
+        a:active {color: orange;}
+        a:focus{color: deeppink;}
+
+        /* 가상요소 */
+        /* 첫번째요소,마직막요소,n번째 지식,n번째 타입, 이전,이후 */
+        
+        div :first-child{
+            color:red;
+            
+        }
+        div :last-child{
+            color: blue;
+        }
+        /* div p:nth-child(2){
+
+        } */
+        div p:nth-child(2n){
+            color: green !important;
+        }
+        div p:nth-of-type(2n){
+            color: purple;
+        }
+
+        div p:nth-last-of-type(3){
+            color: orange;
+        }
+        div p:nth-last-child(2n+2){
+            color: deeppink;
+        }
+
+        p::before{
+            content: '접두사';
+        }
+        /* div.cls#id{
+
+        } */
+        /* !important 우선순위 최상위로 지정 */
+        /* OS의 스타일 (ex : 고대비)*/
+        /* 사용자의 스타일 */
+        /* 브라우저의 기본스타일 */
+    </style>
+</head>
+<body>
+    <h3 title="header">제목</h3>
+    <p title="write addr">주소록 작성</p>
+    <p title="write-tel">전화번호 작성</p>
+    <p title="write">건강기록부 작성</p>
+    <p class="write">금전출납부 작성</p>
+
+    <p><a href="#">링크</a></p>
+
+    <div class="cls" id="id">
+        <h1>대 제목</h1>
+        <p>문단1</p>
+        <p>문단2</p>
+        <p>문단3</p>
+        <p>문단4</p>
+        <p>문단5</p>
+        <p>문단6</p>
+        <p>문단7</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        div {
+            width: 300px;
+        }
+        div p{
+            border: 1px solid;
+            /* 영어와 숫자는 자동으로줄바꿈안해줘서 필요함 */
+            /* word-break: unset; */
+        }
+        /* 이거 개중요함 substr 자동해주는거임*/
+        .white-space p:nth-child(2){white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        .white-space p:nth-child(3){white-space: pre;}
+        .white-space p:nth-child(4){white-space: pre-wrap;}
+        .white-space p:nth-child(5){white-space: pre-line; height: 100px; overflow-y: scroll;}
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p>123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</p>
+        <p>가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사</p>
+    </div>
+    <div class="white-space">
+        <p>언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.</p>
+    <p>언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.
+        언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.
+    </p>
+    <p>언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.
+        언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.
+    </p>
+    <p>언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.
+        언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.
+    </p>
+    <p>언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다. 언니는 푸르른산보다 민둥산을 좋아한다 이마가 넓어서인지 모르겠지만 아무튼 산꼭대기는 비어 있어야한다.</p>
+    </div>
+</body>
+</html>
