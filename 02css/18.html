@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box {width: 300px; height: 150px; border: 3px solid blue; border-width: 5px 10px;
+                border-color: red green orange;
+            border-style: solid dashed dotted double;}
+        .wrap {background-color: blue; padding: 30px;}
+        .ballon {
+            /* display: inline-block; */
+            padding: 30px;
+            color: #eee;
+            background-color: #222;
+            max-width: 400px;
+            
+            position: relative;
+            margin: 80px 0;
+        }
+        .ballon::after {
+                
+                position: absolute;
+                display: 0;
+                content: '';
+                bottom: -34px;
+                /* zz */
+                width: 0;
+                /* border-color: red gray green orange; */
+                border: 20px solid transparent;
+                border-top: 25px solid black;
+                margin-left: 50px;
+                transform: skewX(-30deg);
+            }
+
+            .me::after{
+                transform: skewX(30deg);
+            }
+    </style>
+</head>
+<body>
+    <div class="box"> </div>
+    <div class="wrap">
+        <div class="ballon">가나다라가나다라가나다라가나다라가나다라가나다라가나다라</div>
+        <!-- <div class="tri"></div> -->
+         <div class="ballon ">ㄱㅋㅋ</div>
+         <div class="ballon me">내가쓴 텍스트</div>
+    </div>
+</body>
+</html>

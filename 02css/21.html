@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .wrap{
+            padding: 20px; background: skyblue;
+        }
+        .box {
+            width: 100px; height: 100px; background-color: red;
+
+        }
+        .wrap:hover .box{
+            transform: translateX(500px);
+            background-color: aqua;
+            width: 200px;
+            transition:all 2s cubic-bezier(0.25, -0.31, .8, 1.17).5s;
+            transition-property: transform,background-color,width;
+            transition-duration: 5s,5s,0s;
+        }
+        @keyframes hos {
+            from {transform: rotate(0);}
+            to {transform: rotate(360deg);}
+        }
+        #hos {
+            animation-name: hos;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-direction: normal;
+            animation-iteration-count: infinite;
+        }
+        
+        #customProgressWrap {
+            width: 500px;
+            height: 50px;
+            border: 2px solid black;
+        }
+        #customProgressWrap div{
+            background-color: black;
+            height:50px;
+            width: 0;
+
+            animation: progress 5s;
+            animation-fill-mode: forwards;
+        }
+
+
+        @keyframes progress {
+            0% {width : 0}
+            10% {width : 10%}
+            20% {width : 30%}
+            30% {width : 50%}
+            40% {width : 99%}
+            100% {width : 100%}
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="https://www.daum.net" target="_self">다음</a>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+    <img id="hos" alt="히오스" src="https://i.namu.wiki/i/1UyulCcDF0WEolDrlrXOvqIS-n5kzz-jrvid3hZbDW9wc7yuHZ9LAYlSIgrkydW5qwCj92gPnF20zP2e_bt2PQ.webp">
+    <hr>
+    <h4>프로그래스</h4>
+    <div id="customProgressWrap">
+        <div class="progress">
+        </div>
+    </div>
+</body>
+</html>
