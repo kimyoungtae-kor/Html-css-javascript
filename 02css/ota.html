@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box, img {border: 1px solid;}
+        .box {width: 500px; padding: 10px;}
+        img {margin: 20px; float: right;}
+
+        .float-wrap {width: 500px; border: 1px solid;}
+        .float-box {
+            width: 100px; 
+            height: 100px; 
+            background-color: red;
+            text-align: center;
+        }
+        .float-left{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img/bg_animation.png">
+        <p>국군의 조직과 편성은 법률로 정한다. 대통령의 임기가 만료되는 때에는 임기만료 70일 내지 40일전에 후임자를 선거한다.
+            헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.
+        </p>
+    </div>
+    <div class="float-wrap">
+        <div class="float-box float-left">box1</div>
+        <div class="float-box float-left">box2</div>
+        <div class="float-box float-left">box3</div>
+        <div class="float-box">box4</div>
+        <div class="float-box">box5</div>
+    </div>
+</body>
+</html>

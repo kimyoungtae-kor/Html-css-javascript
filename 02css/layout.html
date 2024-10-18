@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>2-col-layout</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .clearfix::after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        header,footer{
+            text-align: center;
+            background-color: cadetblue;
+            padding: 16px;
+        }
+        body{
+            margin: 0;
+        }
+        main{
+            width: 1280px;
+            margin: 0px auto;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        .gnb {background-color: #222;}
+        .gnb > ul{
+            background-color: #222;
+            position: relative;
+        }
+        .gnb >ul >li{
+            float: left;
+            
+            margin: 16px 40px;
+        }
+        .gnb > ul > li  a{
+            color: #eee;
+            text-decoration: none;
+        }
+        .gnb > ul > li  a:hover{
+            color: cadetblue;
+            text-shadow: 0 0 2px #eee;
+        }
+        .gnb li ul{
+            display: none;
+            
+        }
+        .gnb:hover ul ul,.gnb:hover div{
+
+            display: block; 
+        }
+        .gnb ul ul{
+            position: absolute;
+            z-index: 99;
+            top:60px;
+            
+        }
+        .gnb ul ul li {
+            margin: 20px 0;
+        }
+        .gnb > div {
+            position: absolute;
+            height: 200px;
+            background-color: #222;
+            width: 1280px;
+            display: none;
+        }
+
+        /* 본문영역 */
+        .content ,.side {margin: 10px; padding: 10px; float:left}
+        .content {width: 800px;}
+        .side {width: 400px;}
+        .side input ,.side button{
+            padding: 8px; margin-bottom: 20px;width: 200px; box-sizing: border-box;
+        }
+        .side p {
+            margin-bottom: 5px;
+        }
+        .side label {
+            font-size: 12px;
+        }
+        
+        main >div {
+            min-height: calc(100vh - 225px);
+        }
+
+        .popup{
+            position: absolute;
+            width: 420px;
+            /* right: 800px; */
+            left: calc(50% - 210px);
+            top: 300px;
+        }
+        .popup p {
+            margin: 0;
+            background-color: skyblue;
+            color: #eee;
+        }
+        .popup img {
+            display: block;
+        }
+        .popup p input{
+            vertical-align:middle;
+        }
+        .popup p a{
+            float: right;
+            text-decoration: none;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>제목</h1>
+        </header>
+        <main>
+            <nav class="gnb clearfix">
+                <ul class="clearfix">
+                    <li><a href="#">메뉴1</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴2</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴3</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴4</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div>
+
+                </div>
+            </nav>
+            <div class="clearfix">
+                <section class="content">
+                    <h2>메인 컨텐츠</h2>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                </section>
+                <aside class="side">
+                    <form>
+                        <p><label for="id"> 아이디</label></p>
+                        <input name="id" id="id" placeholder="아이디를 입력하세요">
+                        <p><label for="pw"> 비밀번호</label></p>
+                        <input name="pw" id="pw" placeholder="비밀번호를 입력하세요">
+                        <br>
+                        <button>로그인</button>
+                    </form>
+                    <ul>
+                        <li>광고1</li>
+                        <li>광고2</li>
+                        <li>광고3</li>
+                        <li>광고4</li>
+                    </ul>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            꼬릿말
+        </footer>
+    </div>
+    <div class="popup">
+        <div>
+            <img src="https://image.yes24.com/momo/scmfiles/AdvertFiles/202410/2578206_241014101146.jpg">
+            <p class="clearfix">
+                <span><label for="chbox">오늘은 그만 보기</label><input type="checkbox" id="chbox"></span>
+                <a href="#">닫기</a>
+            </p>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body{
+            background-color: black;
+        }
+        .y1 {
+            color: red;
+        }
+        .y2 {
+            color: aqua;
+        }
+        .y3 {
+            color: bisque;
+        }
+        .y4 {
+            color:blueviolet;
+        }
+        .y5{
+            color: blue;
+        }
+        .y6{
+            color: yellow;
+        }
+        .y7{
+            color: white;
+        }
+        .y8{
+            color: tomato;
+        }
+        .y9{
+            color: yellowgreen;
+        }
+        h3{
+            color: white;
+        }
+        p{
+            margin: 0;
+        }
+        h3:nth-of-type(1){
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <script>
+        // let aaa = prompt("이름을 입력하세요");
+        // alert(prompt("이름을 입력하세요") ||'이름없음');
+        var i;
+        var j;
+        var y = 1;
+        var colors = ["red","green","blue","deeppink"];
+        for(i = 2 ;i <10;i++){
+            
+            document.write("<h3>" + i + "단</h3><div style='color:'" + colors[i%4] + "''>")
+            for(j = 1;j<10;j++){
+                document.write(`<p class='y${y}'>${i} X ${j} = ${i*j}</p>` );
+            }
+            y++;
+            document.write("</div><hr>")
+        }
+        </script>
+</body>
+</html>
