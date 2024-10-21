@@ -14,4 +14,4 @@ var num =10;
 num =20;
 num = true;
 
-console.log(("35" + 2 )/ 2);
+

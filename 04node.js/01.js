@@ -41,6 +41,7 @@ num /= 1;
 // 논리 >> false
 // 객체 >> null(주소값 위주로 쫒아가서 null만됨)
 // 함수 >> 
+// underfinded
 // 함수 = 일급객체
 if(function() {
 

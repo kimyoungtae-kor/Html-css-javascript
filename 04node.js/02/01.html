@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h3 id="time"></h3>
+    <script>
+
+        var id = document.getElementById("time");
+        var reInter = setInterval(()=>{
+            id.innerHTML = new Date();
+        },1000)
+
+        // setTimeout(function(){
+        //     clearInterval(reInter);
+        // },10000)
+        var annoyFunc = function(){
+            clearInterval(reInter);
+        }
+        setTimeout(annoyFunc,3000);
+    </script>
+</body>
+</html>
