@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <input id="linkAddr" value="https://www.naver.com">
+    <button id="btn">이동</button>
+    <script>
+        document.getElementById("btn").addEventListener("click",function(){
+            console.log("aa");
+            const input = document.getElementById("linkAddr");
+            confirm(input.value + "의 위치로 이동하시겠습니까?") && (location.href = input.value);
+            
+        })
+    </script>
+    <script>
+        var a = 10;
+        window.f();
+        function f () {
+            console.log("f()",window.a);
+        }
+        for(let i in window){
+            // document.write("<p>" + i + ":::::" + window[i]);
+        }
+        const winproxy = open('moment.html','','width=400,height=400,top=100');
+        winproxy.document.write("<p>부모가씀</p>");
+        winproxy.moveTo(0,0);
+
+        setInterval(function(){
+            winproxy.moveBy(10,10);
+        },500)
+    </script>
+</body>
+</html>
