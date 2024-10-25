@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        function f() {
+        // XmlHttpRequest 객체 생성
+        const xhr = new XMLHttpRequest();
+
+        // Method, URL, 비동기 여부
+        xhr.open('GET', 'student.json');
+        xhr.send();
+
+        xhr.onload = function() {
+            // Server Status : 200 성공, 404 Not Found
+            console.log(xhr);
+            if(xhr.status === 200 && xhr.readyState == 4) {
+                const students = JSON.parse(xhr.response);
+                let str = "";
+                for(let s of students) {
+                    str += "<tr>"
+                    str += `<td>${s.no}</td>`;
+                    str += `<td>${s.name}</td>`;
+                    str += `<td>${s.score}</td>`;
+                    str += "</tr>"
+                }
+                document.querySelector("table").innerHTML += str;
+            }
+            else {
+                console.log('ajax 실패');
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <button onclick="f()">불러오기</button>
+    <table>
+        <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>점수</th>
+        </tr>
+    </table>
+</body>
+</html>
