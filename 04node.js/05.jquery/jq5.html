@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+       body * {
+         border: 1px solid black; padding: 10px; margin: 5px 0; background-color: #ffff;
+       }
+       .content > :nth-child(2), .content >:nth-child(3) {
+        background-color: rgb(251, 5, 136);
+       }
+       
+    </style>
+        <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js'></script>
+        <script>
+            $(function(){
+                $("button").click(function(){
+                    $(this).closest(".content > div").nextUntil(":last-child")
+                    // .filter("lt(2)")
+                    .css("background-color","skyblue")
+                    .closest(".content")
+                    .find("button:last-child")
+                    .css("color",'red');
+                    // $("button").next(2).css("background-color","skyblue");
+                });
+            })
+        </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            헤더
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="paging1">
+                    <div></div>
+                    <div>
+                        <button>&lt;</button>
+                        <button>&gt;</button>
+                    </div>
+                </div>
+                <div class="content2">
+                    <div class="left">
+                        <div class="shop"></div>
+                        <div class="mypage"></div>
+                        <div class="ad"></div>
+                    </div>
+                    <div class="right">
+                        <div class="ad1"></div>
+                        <div class="ad2"></div>
+                        <div class="ad3"></div>
+                        <div class="ad4"></div>
+                        <div class="ad5"></div>
+                        <div class="ad6"></div>
+                        <div class="ad7"></div>
+                        <div class="ad8"></div>
+                        <div class="ad9"></div>
+                        <div class="ad10"></div>
+                    </div>
+                </div>
+                <div class="footer">오늘의혜택</div>
+                <div class="paging">쇼핑아이템 더보기</div>
+            </div>
+            <div class="side">사이드</div>
+        </div>
+        <div class="footer">
+            bnxj
+        </div>
+    </div>
+</body>
+</html>

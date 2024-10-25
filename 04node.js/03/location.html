@@ -11,6 +11,8 @@
 <body>
     
     <script>
+        //lat 위도
+        //lng 경도
        navigator.geolocation.getCurrentPosition(function(position){
             console.log(position);
             document.write(position.coords.latitude + "<br>");
