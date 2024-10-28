@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        let arr = [1,2,3,4,5];
+        arr = arr.filter(function(v) {
+            return v % 2 == 1;
+        }).map(v => { console.log(v); return v; });
+        console.log(arr);
+
+        let obj = {x:10, y:20};
+        obj = $.map(obj, function(v, i) {
+            console.log(v, i);
+            return v;
+        })
+        console.log(obj);
+        // obj.map(function(v, i) {
+        //     console.log(v, i);
+        // })
+        $(function() {
+            // console.log($("div").text());
+            // //각 div 요소내의 텍스트로 글자색 
+            
+            // $("div").each(function(x,y){
+            //     $(y).css("color",$(y).text());
+            // });
+
+            // $("button").click(function(){
+            //     $("div").text(function(i,v){
+            //         $(this).css("color",v);
+            //     })
+
+            //     console.log($("div"));
+            //     $("body").html(function(i,item){
+
+            //         return item + "<p>가나다라</p>";
+            //     })
+            // })
+
+            $("button.btn").click(function(){
+                console.log($(this));
+                $(this).next().html(function(){
+                    console.log($(this));
+                    return $(this).html() + `<p>문장${$(this).find("p").length+1}</p>`;
+                })
+                // console.log($(this));
+                // console.log($(this).next().is("div"));
+                 
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div>red</div>
+    <div>green</div>
+    <div>blue</div>
+    <button>클릭</button>
+
+    <hr>
+    <button class="btn">클릭</button>
+    <div>
+        
+    </div>
+</body>
+</html>
