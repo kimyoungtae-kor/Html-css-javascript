@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js'></script>
+    <style>
+        h2{
+            border: 5px solid black; padding: 16px; background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        <a href="https://www.naver.com">네이버</a>
+    </h2>
+    <script>
+        $(function(){
+            //이벤트전파 (같은 이벤트 타입이 겹쳐 있을때)
+            // 기본값: 버블링 // 하위 > 상위
+            // 변경 가능값 : 캡쳐링 // 상위 >하위
+            $("h2").click(function(){
+                $(this).css("backgroundColor","orange");
+            });
+            $("a").click(function(){
+                // console.log(event);
+                // event.preventDefault(); //기본 기능 비활성화
+                // event.stopPropagation(); //위임 불가능
+                return false; //둘다 거는거
+            });
+        })
+    </script>
+</body>
+</html>
