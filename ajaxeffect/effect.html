@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    
+    <style>
+        hr + div h3 {border: 5px solid; background-color: orange; padding: 20px;}
+    </style>
+    <script>
+        $(function(){
+            $("button:eq(0)").click(function (){
+                $(".target *").show("slow"); //ms 단위도 가능하고 slow,fast도 가능하다
+            })
+            $("button:eq(1)").click(function (){
+                $(".target *").hide("slow",function(){
+                    // alert("hide");
+                    //마찬가지
+                });
+            })
+            $("button:eq(2)").click(function (){
+                $(".target *").toggle();
+            })
+            $("button:eq(3)").click(function (){
+                $(".target *").slideDown("slow"); //ms 단위도 가능하고 slow,fast도 가능하다
+            })
+            $("button:eq(4)").click(function (){
+                $(".target *").slideUp("slow",function(){
+                    // alert("hide");
+                    //마찬가지
+                });
+            })
+            $("button:eq(5)").click(function (){
+                $(".target *").slideToggle(9999);
+                $("button:eq(5)").text("펼치기").closest();
+            })
+            $("button:eq(6)").click(function (){
+                $(".target *").fadeIn("slow"); //ms 단위도 가능하고 slow,fast도 가능하다
+            })
+            $("button:eq(7)").click(function (){
+                $(".target *").fadeOut("slow",function(){
+                    // alert("hide");
+                    //마찬가지
+                });
+            })
+            $("button:eq(8)").click(function (){
+                $(".target *").fadeToggle();
+            })
+            $("button:eq(9)").click(function (){
+                $(".target *").fadeTo(500,parseInt(Math.random() * 11) / 10);
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div class="btn-wrap">
+        <h3>toggle</h3>
+        <button>show</button>
+        <button>hide</button>
+        <button>toggle</button>
+        <h3>slide</h3>
+        <button>slideDown</button>
+        <button>slideup</button>
+        <button>slideToggle</button>
+        <h3>fade</h3>
+        <button>fadeIn</button>
+        <button>fadeOut</button>
+        <button>fadeToggle</button>
+        <button>fadeTo (Random)</button>
+    </div>
+    <hr>
+    <div class="target">
+        <h3>대상 텍스트</h3>
+        <h3>대상 텍스트</h3>
+        <h3>대상 텍스트</h3>
+        <h3>대상 텍스트</h3>
+        <h3>대상 텍스트</h3>
+    </div>
+</body>
+</html>
